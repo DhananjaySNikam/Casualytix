@@ -1,0 +1,18 @@
+flowchart LR
+ subgraph Intake
+ A[01 · Problem input] --> B[02 · Evidence intake]
+ end
+ subgraph Reasoning
+ C[03 · Generate causes] --> D[04 · Ishikawa map] --> E[05 · Five Whys]
+ end
+ subgraph Validation
+ F[06 · Match evidence] --> G[07 · Rank causes]
+ end
+ subgraph Resolution
+ H[08 · Corrective actions] --> I[09 · RCA report]
+ end
+ B --> C
+ E --> F
+ G --> H
+ B -. Save for later .-> J[Draft]
+ F -. Evidence gap .-> B

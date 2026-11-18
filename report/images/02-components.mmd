@@ -1,0 +1,13 @@
+flowchart TB
+ UI[React workspace] -->|Same-origin REST| API[FastAPI gateway]
+ API --> IN[Input validation]
+ IN --> RET[Passage retrieval]
+ RET --> E[Diagnostic engine]
+ E --> L[Local classifier]
+ E --> M[Optional language model]
+ L --> R[Evidence matching and ranking]
+ M --> R
+ R --> DB[(SQLite)]
+ DB --> O[Diagrams and reports]
+ UI -->|Explicit archive| A[Supabase Auth]
+ A --> PG[(Postgres and pgvector)]

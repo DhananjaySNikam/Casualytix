@@ -1,0 +1,16 @@
+flowchart TB
+ subgraph Browser
+ UI[React client]
+ SA[Supabase client]
+ end
+ subgraph Host[Application host]
+ UV[Uvicorn and FastAPI]
+ EN[Retrieval and inference]
+ SQ[(SQLite volume)]
+ UV --> EN --> SQ
+ end
+ UI -->|Same origin| UV
+ EN -. Optional .-> M[Model endpoint]
+ UI -->|Explicit archive| SA
+ SA -->|User JWT| SB[Supabase Auth and REST]
+ SB -->|Owner policy| PG[(Postgres and pgvector)]
