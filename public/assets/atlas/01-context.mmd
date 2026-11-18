@@ -1,0 +1,9 @@
+flowchart LR
+ E[Investigator] --> I[Incident brief]
+ E --> D[Evidence and design notes]
+ I --> C[Causalytix workspace]
+ D --> C
+ C --> H[Ranked hypotheses]
+ H --> V[Human verification]
+ C --> R[PDF and JSON reports]
+ C --> A[Optional cloud archive]

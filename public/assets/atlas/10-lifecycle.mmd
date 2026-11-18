@@ -1,0 +1,9 @@
+stateDiagram-v2
+ state "In review" as Review
+ [*] --> Draft: Save brief
+ [*] --> Review: Run analysis
+ Draft --> Review: Analyze
+ Review --> Draft: Edit and save draft
+ Review --> Review: Add evidence and reanalyze
+ Review --> Resolved: Verify and resolve
+ Resolved --> Review: Reopen

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "01-context",
+    "title": "System context",
+    "group": "Architecture",
+    "description": "The investigator supplies a brief and evidence, then reviews hypotheses before applying a fix."
+  },
+  {
+    "id": "02-components",
+    "title": "Component architecture",
+    "group": "Architecture",
+    "description": "The FastAPI gateway coordinates retrieval, inference and persistence; React renders the workspace."
+  },
+  {
+    "id": "03-workflow",
+    "title": "Investigation workflow",
+    "group": "Workflow",
+    "description": "The nine stages of a complete investigation, including the draft path and evidence-gap feedback loop."
+  },
+  {
+    "id": "04-evidence",
+    "title": "Evidence data flow",
+    "group": "Data flow",
+    "description": "A source reference records a document, passage number and original excerpt. Weak matches become explicit gaps."
+  },
+  {
+    "id": "05-sequence",
+    "title": "Analysis sequence",
+    "group": "Workflow",
+    "description": "Two model passes or the offline classifier produce candidates. The gateway computes scores independently."
+  },
+  {
+    "id": "06-data-model",
+    "title": "Entity relationships",
+    "group": "Data model",
+    "description": "The same logical entities are kept locally and in Supabase. Cloud keys include the authenticated owner."
+  },
+  {
+    "id": "07-ishikawa",
+    "title": "Ishikawa mapping",
+    "group": "Diagnostic method",
+    "description": "Illustrative candidate branches, not confirmed causes. Each analyzed case has its own interactive fishbone."
+  },
+  {
+    "id": "08-five-whys",
+    "title": "5-Why expansion",
+    "group": "Diagnostic method",
+    "description": "Each step is a testable hypothesis with its own related passage or evidence-gap flag."
+  },
+  {
+    "id": "09-ranking",
+    "title": "Root cause ranking",
+    "group": "Diagnostic method",
+    "description": "The weighted sum ranks candidates, not the probability of a failure. A human verifies the proposed action."
+  },
+  {
+    "id": "10-lifecycle",
+    "title": "Case lifecycle",
+    "group": "Workflow",
+    "description": "Drafts can be analyzed, reviewed, resolved, and reopened without losing source evidence."
+  },
+  {
+    "id": "11-deployment",
+    "title": "Deployment boundaries",
+    "group": "Architecture",
+    "description": "The local application runs without cloud credentials. Model inference and cloud archival are separate opt-in paths."
+  }
+]
