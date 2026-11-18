@@ -1,0 +1,20 @@
+sequenceDiagram
+ actor E as Engineer
+ participant U as React
+ participant A as FastAPI
+ participant I as Inference
+ participant D as SQLite
+ E->>U: Provide brief and evidence
+ U->>A: Analyze incident
+ A->>D: Read related resolved cases
+ A->>I: Incident and retrieved passages
+ alt Language model selected
+ I->>I: Propose candidates
+ I->>I: Expand five links and actions
+ else Offline or provider failure
+ I->>I: Classify and select playbooks
+ end
+ I-->>A: Typed findings and provenance
+ A->>A: Match sources and rank
+ A->>D: Commit investigation
+ A-->>U: Render report and maps

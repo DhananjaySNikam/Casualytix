@@ -1,0 +1,8 @@
+flowchart LR
+ E[Evidence match] -->|50 percent| S[Weighted sum]
+ I[Severity impact] -->|30 percent| S
+ F[Historical frequency] -->|20 percent| S
+ S --> R[Rank score out of 100]
+ R --> T[Verification test]
+ T -->|Confirmed| A[Corrective action]
+ T -->|Unclear| G[Collect more evidence]

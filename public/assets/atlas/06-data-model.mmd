@@ -1,0 +1,31 @@
+erDiagram
+ WORKSPACE ||--o{ INCIDENT : owns
+ INCIDENT ||--o{ EVIDENCE_DOC : contains
+ EVIDENCE_DOC ||--o{ DOCUMENT_CHUNK : splits_into
+ INCIDENT ||--o{ CAUSE_NODE : proposes
+ INCIDENT ||--o| RCA_REPORT : produces
+ INCIDENT {
+  uuid id PK
+  string title
+  string domain
+  string status
+ }
+ EVIDENCE_DOC {
+  int seq
+  string name
+  text content
+ }
+ DOCUMENT_CHUNK {
+  int seq
+  text content
+  vector embedding
+ }
+ CAUSE_NODE {
+  int branch
+  int depth
+  string category
+  string label
+ }
+ RCA_REPORT {
+  json payload
+ }

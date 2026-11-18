@@ -1,0 +1,11 @@
+flowchart TB
+ A[File upload] --> V[Validate and extract text]
+ B[Pasted observation] --> D[Evidence document]
+ V --> D
+ D --> C[Overlapping passages]
+ C --> H[256-D vectors]
+ H --> I[(Passage index)]
+ Q[Cause or Why statement] --> M[Cosine matching]
+ I --> M
+ M -->|Related| S[Source and excerpt]
+ M -->|Weak or absent| G[Evidence gap]

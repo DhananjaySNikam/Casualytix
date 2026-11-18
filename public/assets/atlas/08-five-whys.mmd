@@ -1,0 +1,8 @@
+flowchart TD
+ S[Slow requests] --> A[1 · Waiting for a session]
+ A --> B[2 · Sessions occupied]
+ B --> C[3 · Long running transactions]
+ C --> D[4 · Pool budget and concurrency mismatch]
+ D --> E[5 · Missing peak workload tests]
+ L[Pool telemetry] -. Compare .-> B
+ E --> V[Verify with a controlled workload]
